@@ -22,7 +22,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def paintEvent(self, event):
         paint = QPainter(self)
-        paint.setBrush(QColor('yellow'))
+        color = QColor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        paint.setBrush(QColor(color))
         for x, y, d in self.circles:
             paint.drawEllipse(x, y, d, d)
 
